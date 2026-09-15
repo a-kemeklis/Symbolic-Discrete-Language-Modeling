@@ -1,0 +1,17 @@
+# Build tokenizer
+cd Base; python3 build_tokenizer.py
+
+# Copy over token list
+mv unique_tokens.pkl ../Loop
+
+# Get dependencies:
+sudo apt-get install bubblewrap
+
+curl -fsSL https://claude.ai/install.sh | bash
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
+
+cd ./Loop
+
+claude "Hi" # Get link, follow in browser, copy over authentication code, and exit before allowing access to current directory
+
+python3 loop.py

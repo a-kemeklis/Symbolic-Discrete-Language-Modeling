@@ -1,0 +1,5 @@
+Download these files from https://huggingface.co/datasets/roneneldan/TinyStories:
+ TinyStories-train.txt
+ TinyStories-valid.txt
+
+Copy TinyStories-valid.txt to loop-data.txt and only keep the first 1000 stories (use text editor to find the thousandth <|endoftext|>
