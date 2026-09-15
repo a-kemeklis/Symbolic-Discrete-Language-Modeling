@@ -20,4 +20,4 @@ FFN approximation: the residual may be transformed based on itself.
 
 Unembedding to predict next token (rules based).
 
-My email: akemeklis@protonmail.com
+My email: akemeklis [at] protonmail [dot] com
