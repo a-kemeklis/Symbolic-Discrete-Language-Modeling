@@ -1,8 +1,13 @@
 **Studying Symbolic/Discrete Language Modeling**
 
-A symbolic language model may be fully interpretable, with embeddings/residuals made of human understandable categorical values and discrete transformation rules. Current LLMs rely on high dimensional continual embeddings and complex transformations on the residuals such as attention (that factors in every single previous residual at the current layer). Studies have been done to interpret residuals by training additional networks on those residuals to isolate codes and so on. Recent findings indicate that this is non-trivial due to LLMs embeddings/residuals having a high degree of superposition.. A model like this could not be built previously because discrete optimization methods are intractable. It is now tractable to build thanks to modern LLMs as optimizers. Once bootstrapped, the symbolic model can replace the LLM itself as the optimizer.
+A symbolic language model may be fully interpretable, with embeddings/residuals consisting of human understandable categorical values, and with discrete transformation rules operating on these embeddings/residuals.
 
-As the ai-2027.com writeup says, eventually “Like a software engineer simplifying spaghetti code into a few elegant lines of Python, [Agent-4, an advanced LLM] untangles its own circuits into something sensible and rational. The new AI is somewhere between a neural net and a traditional computer program, with much of its weights rewritten in readable (albeit very long and arcane) code.“ Achieving this sooner rather than later is important for AI safety.
+Current LLMs rely on high dimensional continual embeddings/residuals and complex transformations such as attention (which factors in every single previous residual at the current layer). Studies have been done to interpret residuals by training additional networks on those residuals to isolate codes and so on. Recent findings indicate that this is non-trivial due to LLMs embeddings/residuals having a high degree of superposition.
+
+A symbolic language model was probably intractable to build previously using discrete optimization methods. It is now tractable to build thanks to modern LLMs as smart optimizers that can make targeted edits to structured symbolic knowledge representations.
+
+As the ai-2027.com writeup says, eventually “Like a software engineer simplifying spaghetti code into a few elegant lines of Python, [Agent-4, an advanced LLM] untangles its own circuits into something sensible and rational. The new AI is somewhere between a neural net and a traditional computer program, with much of its weights rewritten in readable (albeit very long and arcane) code.“
+
 
 I have set up a looping structure to optimize a symbolic language model by repeatedly having Claude (or Grok) work on it. The structure is based on a classic Transformer:
 
