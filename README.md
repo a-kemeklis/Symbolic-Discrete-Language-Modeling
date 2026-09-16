@@ -1,12 +1,8 @@
 **Studying Symbolic/Discrete Language Modeling**
 
-A language model where token IDs are mapped up to symbolic embeddings and later residuals, and where all rules are readable and operate at the symbolic level, would be human interpretable and safe and controllable. A symbolic language model may be more parameter/memory/compute efficient and have better performance (better OOD performance including length-generalization).
+A symbolic language model may be fully interpretable, with embeddings/residuals made of human understandable categorical values and discrete transformation rules. Current LLMs rely on high dimensional continual embeddings and complex transformations on the residuals such as attention (that factors in every single previous residual at the current layer). Studies have been done to interpret residuals by training additional networks on those residuals to isolate codes and so on. Recent findings indicate that this is non-trivial due to LLMs embeddings/residuals having a high degree of superposition.. A model like this could not be built previously because discrete optimization methods are intractable. It is now tractable to build thanks to modern LLMs as optimizers. Once bootstrapped, the symbolic model can replace the LLM itself as the optimizer.
 
-Optimizing a model like this is probably intractable using hill climbing, genetic, annealing, or other classical techniques, as the loss landscape is too ill conditioned.
-
-Modern LLMs make optimization possible because they can make intelligent and targeted edits to discrete structures (such as a knowledge graph).
-
-Once a symbolic language model is bootstrapped with modern LLMs, it could itself handle its own optimization.
+As the ai-2027.com writeup says, eventually “Like a software engineer simplifying spaghetti code into a few elegant lines of Python, [Agent-4, an advanced LLM] untangles its own circuits into something sensible and rational. The new AI is somewhere between a neural net and a traditional computer program, with much of its weights rewritten in readable (albeit very long and arcane) code.“ My mission is to achieve this sooner, to prevent doom.
 
 I have set up a looping structure to optimize a symbolic language model by repeatedly having Claude (or Grok) work on it. The structure is based on a classic Transformer:
 
